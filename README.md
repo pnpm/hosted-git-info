@@ -1,5 +1,5 @@
 <!--@'# ' + package.name + ' ' + shields.flatSquare('npm', 'travis')-->
-# hosted-git-info [![NPM version](https://img.shields.io/npm/v/hosted-git-info.svg?style=flat-square)](https://www.npmjs.com/package/hosted-git-info) [![Build status for master](https://img.shields.io/travis/npm/hosted-git-info/master.svg?style=flat-square)](https://travis-ci.org/npm/hosted-git-info)
+# @zkochan/hosted-git-info [![NPM version](https://img.shields.io/npm/v/@zkochan/hosted-git-info.svg?style=flat-square)](https://www.npmjs.com/package/@zkochan/hosted-git-info) [![Build status for master](https://img.shields.io/travis/zkochan/hosted-git-info/master.svg?style=flat-square)](https://travis-ci.org/zkochan/hosted-git-info)
 <!--/@-->
 
 <!--@package.description-->
@@ -16,7 +16,7 @@ particular file for direct access without git.
 This module is installed via npm:
 
 ```sh
-npm install hosted-git-info --save
+npm install @zkochan/hosted-git-info --save
 ```
 <!--/@-->
 
@@ -24,7 +24,7 @@ npm install hosted-git-info --save
 
 <!--@example('example.js')-->
 ```js
-var hostedGitInfo = require('hosted-git-info')
+var hostedGitInfo = require('@zkochan/hosted-git-info')
 var info = hostedGitInfo.fromUrl('git@github.com:npm/hosted-git-info.git')
 console.log([info.type, info.domain, info.user, info.project].join('\n'))
 //> github
@@ -111,7 +111,7 @@ additional hosts welcome.
 * * *
 
 <!--@devDependencies({ shield: 'flat-square' })-->
-## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status for master](https://img.shields.io/david/dev/npm/hosted-git-info/master.svg?style=flat-square)](https://david-dm.org/npm/hosted-git-info/master#info=devDependencies)
+## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status for master](https://img.shields.io/david/dev/zkochan/hosted-git-info/master.svg?style=flat-square)](https://david-dm.org/zkochan/hosted-git-info/master#info=devDependencies)
 
 - [mos](https://github.com/zkochan/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 - [standard](https://github.com/feross/standard): JavaScript Standard Style
