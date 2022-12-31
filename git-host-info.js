@@ -27,13 +27,22 @@ gitHosts.github = Object.assign({}, defaults, {
   gittemplate: ({ auth, domain, user, project, committish }) => `git://${maybeJoin(auth, '@')}${domain}/${user}/${project}.git${maybeJoin('#', committish)}`,
   tarballtemplate: ({ domain, user, project, committish }) => `https://codeload.${domain}/${user}/${project}/tar.gz/${maybeEncode(committish) || 'master'}`,
   extract: (url) => {
-    let [, user, project, type, committish] = url.pathname.split('/', 5)
-    if (type && type !== 'tree') {
+    let [, user, project, type, ...committish] = url.pathname.split('/')
+
+    if (type && type !== 'tree' && type !== 'pull') {
       return
+    }
+
+    if (type && type === 'pull' && committish.length > 0) {
+      committish = `pull/${committish[0]}/merge`
     }
 
     if (!type) {
       committish = url.hash.slice(1)
+    }
+
+    if (Array.isArray(committish) && type === 'tree') {
+      committish = committish.join('/')
     }
 
     if (project && project.endsWith('.git')) {
