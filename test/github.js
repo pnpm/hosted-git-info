@@ -150,6 +150,8 @@ const valid = {
 
   'git+https://github.com/foo/bar.git': { ...defaults, default: 'https' },
   'git+https://github.com/foo/bar.git#branch': { ...defaults, default: 'https', committish: 'branch' },
+  'git+https://github.com/foo/bar/tree/fix/patch': { ...defaults, default: 'https', committish: 'fix/patch' },
+  'git+https://github.com/foo/bar/pull/1': { ...defaults, default: 'https', committish: 'pull/1/merge' },
   'git+https://user@github.com/foo/bar.git': { ...defaults, default: 'https', auth: 'user' },
   'git+https://user@github.com/foo/bar.git#branch': { ...defaults, default: 'https', auth: 'user', committish: 'branch' },
   'git+https://user:password@github.com/foo/bar.git': { ...defaults, default: 'https', auth: 'user:password' },
